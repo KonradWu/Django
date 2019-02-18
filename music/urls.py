@@ -5,5 +5,9 @@ from . import views
 
 
 urlpatterns = [
+    # /music/
     url('^$', views.index, name='index'),
+
+    # /music/album_id
+    url(r'^(?P<album_id>[0-9]+)/$', views.detail, name='detail'), #album_id złożone z cyfr
 ]
