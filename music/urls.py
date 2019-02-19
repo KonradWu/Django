@@ -9,6 +9,9 @@ urlpatterns = [
     # /music/
     url('^$', views.index, name='index'),
 
-    # /music/721/
-    url(r'^(?P<album_id>[0-9]+)/$', views.detail, name='detail'), #album_id złożone z cyfr
+    # /music/<album_id>/
+    url(r'^(?P<album_id>[0-9]+)/$', views.detail, name='detail'),
+
+    # /music/<album_id>/favorite
+    url(r'^(?P<album_id>[0-9]+)/favorite/$', views.favorite, name='favorite'),
 ]
