@@ -12,18 +12,14 @@
         <p><strong>{{ error_message }}</strong></p>
     {% endif %}
 
-    <form action="{% url 'music:favorite' album.id %}" method="post">
+        <ul>
         {% csrf_token %}
         {% for song in album.song_set.all %}
-            <input type="radio" id="song{{ forloop.counter }}" name="song" value="{{ song.id }}">
-            <label for="song{{ forloop.counter }}">
-                {{ song.song_title }}
-                {% if song.is_favorite %}
-                    <img src="https://cdn2.iconfinder.com/data/icons/flat-game-ui-buttons-icons-1/512/10-512.png" width="16" height="16">
-                {% endif %}
-            </label><br>
-        {% endfor %}
-        <input type="submit" value="Favorite"/>
 
-    </form>
+
+         <li>  {{ song.song_title }}<br></li>
+                {% if song.is_favorite %}
+                {% endif %}
+        {% endfor %}
+        </ul>
 {% endblock %}

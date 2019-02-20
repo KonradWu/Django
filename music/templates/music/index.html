@@ -1,10 +1,10 @@
 {% extends 'music/base.html' %}
 
 {% block body %}
-{% if all_albums %}
+{% if object_list %} <!-- object list jest z automatu po zadeklarowaniu generic list ale można to zmienić context_object_name we views-->
     <h3>Here are my albums</h3>
     <ul>
-        {% for album in all_albums %}
+        {% for album in object_list %}
         <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a> </li> <!--music jest to app_name z urls -->
         {% endfor %}
     </ul>

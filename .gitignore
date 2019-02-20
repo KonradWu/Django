@@ -1,3 +1,5 @@
 *.[oa]
 *.~
 env/*
+*__pycache__*
+*workspace.xml
